@@ -8,3 +8,4 @@ RUN groupadd haproxy && useradd -g haproxy haproxy
 # Refer to http://cbonte.github.io/haproxy-dconv/configuration-1.5.html#chroot.
 RUN mkdir /var/lib/haproxy
 COPY haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
+RUN apt-get update && apt-get install -y socat && rm -rf /var/lib/apt/lists/*
